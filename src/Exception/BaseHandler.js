@@ -34,9 +34,9 @@ class BaseExceptionHandler {
       return `<a href="https://forum.adonisjs.com/search?q=${message}" target="_blank" title="Search on the official forum"><i class="fab fa-discourse"></i></a>`
     })
 
-    youch.addLink(() => {
-      return `<a href="https://discordapp.com/invite/vDcEjq6" target="_blank" title="Join the official Discord server"><i class="fab fa-discord"></i></a>`
-    })
+    // youch.addLink(() => {
+    //   return `<a href="https://discordapp.com/invite/vDcEjq6" target="_blank" title="Join the official Discord server"><i class="fab fa-discord"></i></a>`
+    // })
 
     if (isJSON) {
       return youch.toJSON()

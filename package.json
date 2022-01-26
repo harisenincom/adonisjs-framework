@@ -10,7 +10,7 @@
     "test": "nyc node japaFile.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "commit": "git-cz",
-    "lint": "standard --fix"
+    "lint": "standard"
   },
   "standard": {
     "global": [
