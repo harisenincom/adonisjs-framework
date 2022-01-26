@@ -77,7 +77,7 @@ test.group('Static', (group) => {
     this.server.use(['Adonis/Middleware/Static'])
     const app = http.createServer(this.server.handle.bind(this.server))
     const { text } = await supertest(app).get('/style.css').expect(200)
-    assert.equal(text.trim(), `body { background: #000; }`)
+    assert.equal(text.trim(), 'body { background: #000; }')
   })
 
   test('skip request when verb is not GET or HEAD', async (assert) => {

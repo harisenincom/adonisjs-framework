@@ -272,9 +272,11 @@ class RouteResource extends Macroable {
    * ```
    */
   middleware (middleware) {
-    const middlewareMap = middleware instanceof Map ? middleware : new Map([
-      [['*'], _.castArray(middleware)]
-    ])
+    const middlewareMap = middleware instanceof Map
+      ? middleware
+      : new Map([
+        [['*'], _.castArray(middleware)]
+      ])
 
     for (let [routeNamesList, middlewareList] of middlewareMap) {
       routeNamesList = _.castArray(routeNamesList)

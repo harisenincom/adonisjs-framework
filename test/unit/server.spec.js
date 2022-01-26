@@ -375,7 +375,7 @@ test.group('Server | Calls', (group) => {
 
     Route.get('/', async function () {}).middleware('app')
     this.server.registerNamed({
-      'app': 'Middleware/AppMiddleware'
+      app: 'Middleware/AppMiddleware'
     })
 
     const app = http.createServer(this.server.handle.bind(this.server))
@@ -406,7 +406,7 @@ test.group('Server | Calls', (group) => {
 
     Route.get('/', async function () {}).middleware('auth:jwt,basic')
     this.server.registerNamed({
-      'auth': 'Middleware/Auth'
+      auth: 'Middleware/Auth'
     })
 
     const app = http.createServer(this.server.handle.bind(this.server))
@@ -727,7 +727,7 @@ test.group('Server | Calls', (group) => {
       .middleware('app:2')
 
     this.server.registerNamed({
-      'app': 'Middleware/AppMiddleware'
+      app: 'Middleware/AppMiddleware'
     })
 
     const app = http.createServer(this.server.handle.bind(this.server))

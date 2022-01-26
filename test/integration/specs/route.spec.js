@@ -10,21 +10,27 @@ class UserController {
   index () {
     return 'all'
   }
+
   create () {
     return 'form'
   }
+
   store () {
     return 'stored'
   }
+
   show () {
     return 'one'
   }
+
   edit () {
     return 'one-form'
   }
+
   update () {
     return 'updated'
   }
+
   destroy () {
     return 'destroyed'
   }

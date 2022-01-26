@@ -171,7 +171,7 @@ class Route extends Macroable {
     }
 
     return _.transform(this.domainKeys, (result, key, index) => {
-      let value = domainTokens[index + 1] || null
+      const value = domainTokens[index + 1] || null
       result[key.name] = value
       return result
     }, {})

@@ -101,7 +101,7 @@ class Logger {
    * @return {void}
    */
   debug (message, ...options) {
-    this.log(this.levels['debug'], message, ...options)
+    this.log(this.levels.debug, message, ...options)
   }
 
   /**
@@ -115,7 +115,7 @@ class Logger {
    * @return {void}
    */
   info (message, ...options) {
-    this.log(this.levels['info'], message, ...options)
+    this.log(this.levels.info, message, ...options)
   }
 
   /**
@@ -129,7 +129,7 @@ class Logger {
    * @return {void}
    */
   notice (message, ...options) {
-    this.log(this.levels['notice'], message, ...options)
+    this.log(this.levels.notice, message, ...options)
   }
 
   /**
@@ -143,7 +143,7 @@ class Logger {
    * @return {void}
    */
   warning (message, ...options) {
-    this.log(this.levels['warning'], message, ...options)
+    this.log(this.levels.warning, message, ...options)
   }
 
   /**
@@ -157,7 +157,7 @@ class Logger {
    * @return {void}
    */
   error (message, ...options) {
-    this.log(this.levels['error'], message, ...options)
+    this.log(this.levels.error, message, ...options)
   }
 
   /**
@@ -171,7 +171,7 @@ class Logger {
    * @return {void}
    */
   crit (message, ...options) {
-    this.log(this.levels['crit'], message, ...options)
+    this.log(this.levels.crit, message, ...options)
   }
 
   /**
@@ -185,7 +185,7 @@ class Logger {
    * @return {void}
    */
   alert (message, ...options) {
-    this.log(this.levels['alert'], message, ...options)
+    this.log(this.levels.alert, message, ...options)
   }
 
   /**
@@ -199,7 +199,7 @@ class Logger {
    * @return {void}
    */
   emerg (message, ...options) {
-    this.log(this.levels['emerg'], message, ...options)
+    this.log(this.levels.emerg, message, ...options)
   }
 }
 

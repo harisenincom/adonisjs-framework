@@ -224,7 +224,7 @@ test.group('Response', (group) => {
     })
 
     const res = await supertest(server).get('/?callback=exec').expect(200)
-    assert.equal(res.text, `/**/ typeof exec === 'function' && exec({"username":"virk"});`)
+    assert.equal(res.text, '/**/ typeof exec === \'function\' && exec({"username":"virk"});')
   })
 
   test('use the explicit callbackFn over request query param', async (assert) => {
@@ -235,7 +235,7 @@ test.group('Response', (group) => {
     })
 
     const res = await supertest(server).get('/?callback=exec').expect(200)
-    assert.equal(res.text, `/**/ typeof eval === 'function' && eval({"username":"virk"});`)
+    assert.equal(res.text, '/**/ typeof eval === \'function\' && eval({"username":"virk"});')
   })
 
   test('set 401 as the status via unauthorized method', async (assert) => {

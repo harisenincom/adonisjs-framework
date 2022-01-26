@@ -59,12 +59,14 @@ class BaseExceptionHandler {
    * @private
    */
   _getPlainError (error, isJSON) {
-    return isJSON ? {
-      message: error.message,
-      name: error.name,
-      code: error.code,
-      status: error.status
-    } : `${error.name}: ${error.message}`
+    return isJSON
+      ? {
+          message: error.message,
+          name: error.name,
+          code: error.code,
+          status: error.status
+        }
+      : `${error.name}: ${error.message}`
   }
 
   /**

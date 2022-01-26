@@ -88,7 +88,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ route('profile', { id: 1 }) }}`
+    const template = '{{ route(\'profile\', { id: 1 }) }}'
     assert.equal(view.renderString(template).trim(), '/users/1')
   })
 
@@ -100,7 +100,7 @@ test.group('Views globals', (group) => {
     RouteManager.route('users/:id', function () {}).as('profile')
 
     try {
-      view.renderString(`{{ route('profile') }}`)
+      view.renderString('{{ route(\'profile\') }}')
     } catch ({ message }) {
       assert.isTrue(message.startsWith('"route" view global error:'))
     }
@@ -112,7 +112,7 @@ test.group('Views globals', (group) => {
     config.set('app.http.baseUrl', 'http://localhost')
     globals(view, RouteManager, config)
     RouteManager.route('users/:id', function () { }).as('profile')
-    const template = `{{ route('profile', { id: 1 }) }}`
+    const template = '{{ route(\'profile\', { id: 1 }) }}'
     assert.equal(view.renderString(template).trim(), 'http://localhost/users/1')
   })
 
@@ -120,7 +120,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ assetsUrl('style.css') }}`
+    const template = '{{ assetsUrl(\'style.css\') }}'
     assert.equal(view.renderString(template).trim(), '/style.css')
   })
 
@@ -130,7 +130,7 @@ test.group('Views globals', (group) => {
     config.set('app.http.baseUrl', 'http://localhost')
     globals(view, RouteManager, config)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ assetsUrl('style.css') }}`
+    const template = '{{ assetsUrl(\'style.css\') }}'
     assert.equal(view.renderString(template).trim(), 'http://localhost/style.css')
   })
 
@@ -138,7 +138,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ assetsUrl('https://style.css') }}`
+    const template = '{{ assetsUrl(\'https://style.css\') }}'
     assert.equal(view.renderString(template).trim(), 'https://style.css')
   })
 
@@ -146,7 +146,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ style('style.css') }}`
+    const template = '{{ style(\'style.css\') }}'
     assert.equal(view.renderString(template).trim(), '<link rel="stylesheet" href="/style.css" />')
   })
 
@@ -154,7 +154,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ style('style') }}`
+    const template = '{{ style(\'style\') }}'
     assert.equal(view.renderString(template).trim(), '<link rel="stylesheet" href="/style.css" />')
   })
 
@@ -162,7 +162,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ style('style', true) }}`
+    const template = '{{ style(\'style\', true) }}'
     assert.equal(view.renderString(template).trim(), '<link rel="stylesheet" href="/style" />')
   })
 
@@ -170,7 +170,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ script('app.js') }}`
+    const template = '{{ script(\'app.js\') }}'
     assert.equal(view.renderString(template).trim(), '<script type="text/javascript" src="/app.js"></script>')
   })
 
@@ -178,7 +178,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ script('app') }}`
+    const template = '{{ script(\'app\') }}'
     assert.equal(view.renderString(template).trim(), '<script type="text/javascript" src="/app.js"></script>')
   })
 
@@ -186,7 +186,7 @@ test.group('Views globals', (group) => {
     const view = new View(this.helpers)
     globals(view, RouteManager)
     RouteManager.route('users/:id', function () {}).as('profile')
-    const template = `{{ script('app', true) }}`
+    const template = '{{ script(\'app\', true) }}'
     assert.equal(view.renderString(template).trim(), '<script type="text/javascript" src="/app"></script>')
   })
 })
@@ -227,7 +227,7 @@ test.group('Views tags', () => {
     const view = new View(this.helpers)
     Tags(view, this.helpers)
 
-    const template = `@inlineSvg('logo.svg')`
+    const template = '@inlineSvg(\'logo.svg\')'
     assert.equal(view.renderString(template).trim(), '<svg id="logo"></svg>')
   })
 
@@ -235,7 +235,7 @@ test.group('Views tags', () => {
     const view = new View(this.helpers)
     Tags(view, this.helpers)
 
-    const template = `@inlineSvg('logo')`
+    const template = '@inlineSvg(\'logo\')'
     assert.equal(view.renderString(template).trim(), '<svg id="logo"></svg>')
   })
 })
